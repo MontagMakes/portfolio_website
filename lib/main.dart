@@ -45,7 +45,7 @@ class MyHomePage extends StatelessWidget {
               child: Padding(
                 padding: EdgeInsets.only(top: 100, left: 50, right: 25),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween, 
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     MainSection(

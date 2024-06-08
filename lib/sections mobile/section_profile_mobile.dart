@@ -1,16 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class ProfileSection extends StatelessWidget {
-  final double maxProfileWidth;
-  const ProfileSection({
-    super.key, required this.maxProfileWidth,
+class ProfileSectionMobile extends StatelessWidget {
+  const ProfileSectionMobile({
+    super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: maxProfileWidth),
+      constraints: const BoxConstraints(maxWidth: 640),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +43,6 @@ class ProfileSection extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Color(0xff374151)),
           ),
-
           const SizedBox(
             height: 20,
           ),

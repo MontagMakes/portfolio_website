@@ -29,59 +29,81 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.black87,
-        body: Padding(
-          padding: const EdgeInsets.only(left: 100, right: 20, top: 0, bottom: 0),
-          child: LayoutBuilder(builder: (context, constraints) {
-            //web
-            if (constraints.maxWidth > 1141 && constraints.maxWidth < 2000) {
-              return _buildPage(800, 3, 100, 20);
-          
-              //tablet
-            } else if (constraints.maxWidth > 841 &&
-                constraints.maxWidth < 1140) {
-              return const SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 100),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [MainSection(maxGridWidth: 500, gridCount: 2,), ProfileSection()],
-                  ),
-                ),
-              );
-          
-              //mobile
-            } else {
-              return const Center(
-                child: SingleChildScrollView(
-                  child: Padding(
-                    padding: EdgeInsets.only(top: 100),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [ ProfileSection(), MainSection(maxGridWidth: 300, gridCount: 1,)],
+        body: LayoutBuilder(builder: (context, constraints) {
+          //web
+          if (constraints.maxWidth > 1351 && constraints.maxWidth < 2000) {
+            return _buildPage(800, 3, 100, 100);
+
+            //tablet
+          } else if (constraints.maxWidth > 931 &&
+              constraints.maxWidth < 1350) {
+            return _buildPage(500, 2, 50, 50);
+
+            //mobile
+          } else if (constraints.maxWidth < 930 && constraints.maxWidth > 711) {
+            return const SingleChildScrollView(
+              child: Padding(
+                padding: EdgeInsets.only(top: 100, left: 50, right: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    MainSection(
+                      maxGridWidth: 300,
+                      gridCount: 1,
                     ),
+                    ProfileSection(
+                      maxProfileWidth: 330,
+                    ),
+                  ],
+                ),
+              ),
+            );
+          } else {
+            return const SizedBox(
+              width: 710,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: EdgeInsets.only(top: 100, left: 50, right: 50),
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      ProfileSection(
+                        maxProfileWidth: 710,
+                      ),
+                      MainSection(
+                        maxGridWidth: 380,
+                        gridCount: 1,
+                      )
+                    ],
                   ),
                 ),
-              );
-            }
-          }),
-        ));
+              ),
+            );
+          }
+        }));
   }
 
   Widget _buildPage(gridWidth, gridCount, paddingLeft, paddingRight) {
-    return const SingleChildScrollView(
+    return SingleChildScrollView(
       child: Padding(
-        padding: EdgeInsets.only(top: 100),
+        padding: EdgeInsets.only(
+          top: 100,
+          left: paddingLeft,
+          right: paddingRight,
+        ),
         child: Row(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             MainSection(
-              maxGridWidth: 800,
-              gridCount: 3,
+              maxGridWidth: gridWidth,
+              gridCount: gridCount,
             ),
-            ProfileSection()
+            const ProfileSection(
+              maxProfileWidth: 330,
+            )
           ],
         ),
       ),

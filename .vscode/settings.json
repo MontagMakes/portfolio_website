@@ -3,6 +3,8 @@
         "Arsalan"
     ],
 
-    "liveServer.settings.root": "/web"
+    "liveServer.settings.root": "/web",
+    "cmake.ignoreCMakeListsMissing": true,
+    "cmake.configureOnOpen": true
 
 }

@@ -34,16 +34,7 @@ class MyHomePage extends StatelessWidget {
           child: LayoutBuilder(builder: (context, constraints) {
             //web
             if (constraints.maxWidth > 1141 && constraints.maxWidth < 2000) {
-              return const SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 100),
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [MainSection(maxGridWidth: 800, gridCount: 3,), ProfileSection()],
-                  ),
-                ),
-              );
+              return _buildPage(800, 3, 100, 20);
           
               //tablet
             } else if (constraints.maxWidth > 841 &&
@@ -61,19 +52,40 @@ class MyHomePage extends StatelessWidget {
           
               //mobile
             } else {
-              return const SingleChildScrollView(
-                child: Padding(
-                  padding: EdgeInsets.only(top: 100),
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [ ProfileSection(), MainSection(maxGridWidth: 300, gridCount: 1,)],
+              return const Center(
+                child: SingleChildScrollView(
+                  child: Padding(
+                    padding: EdgeInsets.only(top: 100),
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [ ProfileSection(), MainSection(maxGridWidth: 300, gridCount: 1,)],
+                    ),
                   ),
                 ),
               );
             }
           }),
         ));
+  }
+
+  Widget _buildPage(gridWidth, gridCount, paddingLeft, paddingRight) {
+    return const SingleChildScrollView(
+      child: Padding(
+        padding: EdgeInsets.only(top: 100),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            MainSection(
+              maxGridWidth: 800,
+              gridCount: 3,
+            ),
+            ProfileSection()
+          ],
+        ),
+      ),
+    );
   }
 }
 

@@ -19,7 +19,7 @@ class ProfileSection extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text(
+          const Text( 
             'Arsalan K. Nizamani',
             style: TextStyle(fontSize: 20, color: Color(0xffA4A4A4)),
           ),

@@ -22,13 +22,29 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  Color bgColor = const Color(0xFF202124);
+
+  changeBackGroundColor() {
+    setState(() {
+      bgColor = bgColor == const Color(0xFF202124)
+          ? const Color(0xFFFFFFFF)
+          : const Color(0xFF202124);
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.black87,
+        backgroundColor: bgColor,
         body: LayoutBuilder(builder: (context, constraints) {
           //web
           if (constraints.maxWidth > 1351 && constraints.maxWidth < 2000) {
@@ -41,18 +57,19 @@ class MyHomePage extends StatelessWidget {
 
             //mobile
           } else if (constraints.maxWidth < 930 && constraints.maxWidth > 711) {
-            return const SingleChildScrollView(
+            return SingleChildScrollView(
               child: Padding(
-                padding: EdgeInsets.only(top: 100, left: 50, right: 25),
+                padding: const EdgeInsets.only(top: 100, left: 50, right: 25),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween, 
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    MainSection(
+                    const MainSection(
                       maxGridWidth: 300,
                       gridCount: 1,
                     ),
                     ProfileSection(
+                      bgColor: bgColor,
                       maxProfileWidth: 330,
                     ),
                   ],
@@ -60,21 +77,26 @@ class MyHomePage extends StatelessWidget {
               ),
             );
           } else {
-            return const SizedBox(
+            return SizedBox(
               width: 710,
               child: SingleChildScrollView(
                 child: Padding(
-                  padding: EdgeInsets.only(top: 100, left: 50, right: 50),
+                  padding: const EdgeInsets.only(top: 100, left: 50, right: 50),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      ProfileSection(
-                        maxProfileWidth: 710,
+                      Center(
+                        child: ProfileSection(
+                          bgColor: bgColor,
+                          maxProfileWidth: 710,
+                        ),
                       ),
+                      const SizedBox(height: 15),
                       MainSection(
                         maxGridWidth: 380,
                         gridCount: 1,
+                        changeBackGroundColor: changeBackGroundColor,
                       )
                     ],
                   ),
@@ -101,7 +123,8 @@ class MyHomePage extends StatelessWidget {
               maxGridWidth: gridWidth,
               gridCount: gridCount,
             ),
-            const ProfileSection(
+            ProfileSection(
+              bgColor: bgColor,
               maxProfileWidth: 330,
             )
           ],

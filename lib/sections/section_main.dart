@@ -5,8 +5,14 @@ import 'package:portfolio_website/sections/widgets/card_widget.dart';
 class MainSection extends StatelessWidget {
   final double maxGridWidth;
   final int gridCount;
+  final VoidCallback changeBackGroundColor;
   const MainSection(
-      {super.key, required this.maxGridWidth, required this.gridCount});
+      {super.key,
+      required this.maxGridWidth,
+      required this.gridCount,
+      this.changeBackGroundColor = emptyFunction});
+
+  static void emptyFunction() {}
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +25,11 @@ class MainSection extends StatelessWidget {
             margin: const EdgeInsets.all(0),
             padding: const EdgeInsets.all(0),
             child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                
+                  changeBackGroundColor();
+                
+              },
               icon: const Icon(
                 FontAwesomeIcons.moon,
                 color: Colors.white,

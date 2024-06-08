@@ -3,8 +3,11 @@ import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class ProfileSection extends StatelessWidget {
   final double maxProfileWidth;
+  final Color bgColor;
   const ProfileSection({
-    super.key, required this.maxProfileWidth,
+    super.key,
+    required this.maxProfileWidth,
+    required this.bgColor,
   });
 
   @override
@@ -44,7 +47,6 @@ class ProfileSection extends StatelessWidget {
                 fontWeight: FontWeight.bold,
                 color: Color(0xff374151)),
           ),
-
           const SizedBox(
             height: 20,
           ),
@@ -57,8 +59,9 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all(const Color(0xff1b1c1f))),
+                      backgroundColor: bgColor == const Color(0xFF202124)
+                          ? WidgetStateProperty.all(const Color(0xff1b1c1f))
+                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
                   onPressed: () {},
                   child: const Row(
                     children: [

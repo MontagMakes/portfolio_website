@@ -59,10 +59,13 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(10),
+                      elevation: WidgetStateProperty.all(1),
+                      shape: WidgetStatePropertyAll(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+                      ),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
-                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
+                          : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
                   onPressed: () {},
                   child: const Row(
                     children: [
@@ -83,10 +86,13 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(10),
+                      elevation: WidgetStateProperty.all(1),
+                      shape: WidgetStatePropertyAll(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+                      ),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
-                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
+                          : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
                   onPressed: () {},
                   child: const Row(
                     children: [
@@ -107,10 +113,13 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(10),
+                      elevation: WidgetStateProperty.all(1),
+                      shape: WidgetStatePropertyAll(
+                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
+                      ),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
-                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
+                          : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
                   onPressed: () {},
                   child: const Row(
                     children: [

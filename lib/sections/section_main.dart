@@ -84,9 +84,12 @@ class _MainSectionState extends State<MainSection> {
                   10,
                   (index) => Container(
                         margin: const EdgeInsets.only(right: 10),
-                        padding: const EdgeInsets.all(10),
+                        padding: const EdgeInsets.all(10), 
                         decoration: BoxDecoration(
-                            color: const Color(0xff1B1C1F),
+                          
+                            color: widget.bgColor == const Color(0xFF202124)
+                                ? const Color(0xff1b1c1f)
+                                : const Color(0xFFFFFFFF),
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
                           "Tech $index",

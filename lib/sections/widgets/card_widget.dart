@@ -19,71 +19,62 @@ class CardWidget extends StatelessWidget {
           : const Color(0xFFFFFFFF),
       child: Padding(
         padding: const EdgeInsets.all(18.0),
-        child: Stack(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(
-                height: 150,
-                width: 300,
-                child: projects[index][4] == "asset"
-                    ? Image.asset(projects[index][0])
-                    : Image.network(
-                        projects[index][0],
-                      )),
-            // projects[index][4] == "asset"
-            //     ? Image.asset(projects[index][0])
-            //     : Image.network(
-            //         projects[index][0],
-            //       ),
-            Positioned(
-              bottom: 90,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.start,
-                children: [
-                  const Icon(
-                    Icons.play_arrow,
-                  ),
-                  Text(
-                    projects[index][2],
-                    style: const TextStyle(color: Color(0xffA4A4A4)),
-                  ),
-                ],
-              ),
-            ),
-            Positioned(
-                bottom: 56,
-                child: SizedBox(
-                  width: 230,
-                  child: Text(projects[index][3],
-                      style: const TextStyle(color: Colors.grey, fontSize: 12)),
-                )),
-            Positioned(
-              bottom: 0,
+            Expanded(
               child: SizedBox(
-                height: 25,
-                width: 80,
-                child: FilledButton(
-                  onPressed: () {},
-                  style: ButtonStyle(
-                    elevation: WidgetStateProperty.all<double>(10),
-                    side: WidgetStateProperty.all<BorderSide>(
-                        const BorderSide(color: Color(0xffA4A4A4))),
-                      padding: WidgetStateProperty.all<EdgeInsets>(
-                          const EdgeInsets.only(
-                              left: 5, right: 5, top: 5, bottom: 5)),
-                      shape: WidgetStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(6.0))),
-                      backgroundColor: WidgetStateColor.resolveWith(
-                          (states) => bgColor == const Color(0xFF202124)
-                              ? const Color(0xff1b1c1f)
-                              : const Color(0xFFFFFFFF))),
-                  child: const Text(
-                    "PlayStore",
-                    style: TextStyle(
-                        color: Color(0xffA4A4A4),
-                        fontWeight: FontWeight.bold,
-                        fontSize: 12),
-                  ),
+                  width: 300,
+                  child: projects[index][4] == "asset"
+                      ? Image.asset(projects[index][0])
+                      : Image.network(
+                          projects[index][0],
+                        )),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              children: [
+                const Icon(
+                  Icons.play_arrow,
+                ),
+                Text(
+                  projects[index][2],
+                  style: const TextStyle(color: Color(0xffA4A4A4)),
+                ),
+              ],
+            ),
+            SizedBox(
+              width: 230,
+              child: Text(projects[index][3],
+                  style: const TextStyle(color: Colors.grey, fontSize: 12)),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            SizedBox(
+              height: 25,
+              width: 80,
+              child: FilledButton(
+                onPressed: () {},
+                style: ButtonStyle(
+                  elevation: WidgetStateProperty.all<double>(10),
+                  
+                    padding: WidgetStateProperty.all<EdgeInsets>(
+                        const EdgeInsets.only(
+                            left: 5, right: 5, top: 5, bottom: 5)),
+                    shape: WidgetStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(6.0))),
+                    backgroundColor: WidgetStateColor.resolveWith(
+                        (states) => bgColor == const Color(0xFF202124)
+                            ? const Color(0xff1b1c1f)
+                            : const Color(0xFFFFFFFF))),
+                child: const Text(
+                  "PlayStore",
+                  style: TextStyle(
+                      color: Color(0xffA4A4A4),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 12),
                 ),
               ),
             ),

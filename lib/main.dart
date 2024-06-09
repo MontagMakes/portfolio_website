@@ -29,17 +29,41 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
-  Color bgColor = const Color(0xFF202124);
+class _MyHomePageState extends State<MyHomePage>
+    with SingleTickerProviderStateMixin {
+  Color? bgColor = const Color(0xFF202124);
+  late AnimationController _controller;
+  late Animation<Color?> _colorAnimation;
 
-  changeBackGroundColor() {
-    setState(() {
-      bgColor = bgColor == const Color(0xFF202124)
-          ? const Color(0xFFFFFFFF)
-          : const Color(0xFF202124);
+  @override
+  void initState() {
+    super.initState();
+    _controller = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 200));
+    _colorAnimation =
+        ColorTween(begin: const Color(0xFF202124), end: const Color(0xFFFFFFFF))
+            .animate(_controller);
+
+    _controller.addListener(() {
+      setState(() {
+        bgColor = _colorAnimation.value;
+      });
     });
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  changeBackGroundColor() {
+    if (_controller.status == AnimationStatus.completed) {
+      _controller.reverse();
+    } else if (_controller.status == AnimationStatus.dismissed) {
+      _controller.forward();
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,25 +81,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
             //mobile
           } else if (constraints.maxWidth < 930 && constraints.maxWidth > 711) {
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.only(top: 100, left: 50, right: 25),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const MainSection(
-                      maxGridWidth: 300,
-                      gridCount: 1,
-                    ),
-                    ProfileSection(
-                      bgColor: bgColor,
-                      maxProfileWidth: 330,
-                    ),
-                  ],
-                ),
-              ),
-            );
+            return _buildPage(300, 1, 50, 25);
           } else {
             return SizedBox(
               width: 710,
@@ -88,7 +94,7 @@ class _MyHomePageState extends State<MyHomePage> {
                     children: [
                       Center(
                         child: ProfileSection(
-                          bgColor: bgColor,
+                          bgColor: bgColor as Color,
                           maxProfileWidth: 710,
                         ),
                       ),
@@ -97,6 +103,7 @@ class _MyHomePageState extends State<MyHomePage> {
                         maxGridWidth: 380,
                         gridCount: 1,
                         changeBackGroundColor: changeBackGroundColor,
+                        bgColor: bgColor as Color,
                       )
                     ],
                   ),
@@ -122,9 +129,11 @@ class _MyHomePageState extends State<MyHomePage> {
             MainSection(
               maxGridWidth: gridWidth,
               gridCount: gridCount,
+              changeBackGroundColor: changeBackGroundColor,
+              bgColor: bgColor as Color,
             ),
             ProfileSection(
-              bgColor: bgColor,
+              bgColor: bgColor as Color,
               maxProfileWidth: 330,
             )
           ],
@@ -136,27 +145,38 @@ class _MyHomePageState extends State<MyHomePage> {
 
 List<List<String>> projects = [
   [
-    "https://eyriscrafts.com/projects/advanced-news-app/bg.png",
+    "assets/newspak.png",
     "/assets/icon.png",
     "NewsPak",
-    "Superior news app with advanced features"
+    "Superior Multi-channel news app with advanced features",
+    "asset"
   ],
   [
-    "https://eyriscrafts.com/projects/advanced-news-app/bg.png",
+    "assets/propak.png",
     "/assets/icon.png",
-    "NewsPak",
-    "Superior news app with advanced features"
+    "ProPak",
+    "ProPakistani news app with advanced features",
+    "asset"
   ],
   [
-    "https://eyriscrafts.com/projects/advanced-news-app/bg.png",
+    "assets/tribune.png",
     "/assets/icon.png",
-    "NewsPak",
-    "Superior news app with advanced features"
+    "The Tribune",
+    "Express Tribune news app with advanced features",
+    "asset"
   ],
   [
-    "https://eyriscrafts.com/projects/advanced-news-app/bg.png",
+    "etch.png",
     "/assets/icon.png",
-    "NewsPak",
-    "Superior news app with advanced features"
+    "Etch-a-Sketch",
+    "Color paint board website Made in html/css/javascript",
+    "asset"
+  ],
+  [
+    "rock.png",
+    "/assets/icon.png",
+    "Rock-paper-scissors",
+    "Game as a website Made in html/css/javascript",
+    "asset"
   ],
 ];

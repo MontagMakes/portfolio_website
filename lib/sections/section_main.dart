@@ -2,22 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:portfolio_website/sections/widgets/card_widget.dart';
 
-class MainSection extends StatelessWidget {
+class MainSection extends StatefulWidget {
   final double maxGridWidth;
   final int gridCount;
   final VoidCallback changeBackGroundColor;
+  final Color bgColor;
   const MainSection(
       {super.key,
       required this.maxGridWidth,
       required this.gridCount,
-      this.changeBackGroundColor = emptyFunction});
+      this.changeBackGroundColor = emptyFunction,
+      required this.bgColor});
 
   static void emptyFunction() {}
 
   @override
+  State<MainSection> createState() => _MainSectionState();
+}
+
+class _MainSectionState extends State<MainSection> {
+  @override
   Widget build(BuildContext context) {
     return ConstrainedBox(
-      constraints: BoxConstraints(maxWidth: maxGridWidth),
+      constraints: BoxConstraints(maxWidth: widget.maxGridWidth),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -26,13 +33,15 @@ class MainSection extends StatelessWidget {
             padding: const EdgeInsets.all(0),
             child: IconButton(
               onPressed: () {
-                
-                  changeBackGroundColor();
-                
+                setState(() {
+                  widget.changeBackGroundColor();
+                });
               },
-              icon: const Icon(
-                FontAwesomeIcons.moon,
-                color: Colors.white,
+              icon: Icon(
+                widget.bgColor == const Color(0xFF202124)
+                    ? FontAwesomeIcons.sun
+                    : FontAwesomeIcons.moon,
+                color: const Color(0xffA4A4A4),
               ),
             ),
           ),
@@ -47,11 +56,11 @@ class MainSection extends StatelessWidget {
           //Project Grid
           GridView.count(
             childAspectRatio: 0.85,
-            crossAxisCount: gridCount,
+            crossAxisCount: widget.gridCount,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            children: List.generate(4, (index) {
-              return CardWidget(index: index);
+            children: List.generate(5, (index) {
+              return CardWidget(index: index, bgColor: widget.bgColor,);
             }),
           ),
 

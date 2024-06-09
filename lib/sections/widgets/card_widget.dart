@@ -3,23 +3,37 @@ import 'package:portfolio_website/main.dart';
 
 class CardWidget extends StatelessWidget {
   final int index;
-  const CardWidget({super.key, required this.index});
+  final Color bgColor;
+  const CardWidget({super.key, required this.index, required this.bgColor});
 
   @override
   Widget build(BuildContext context) {
     return Card(
+      elevation: 10,
       shape: RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(10.0),
       ),
       margin: const EdgeInsets.all(10),
-      color: const Color(0xff1B1C1F),
+      color: bgColor == const Color(0xFF202124)
+          ? const Color(0xff1b1c1f)
+          : const Color(0xFFFFFFFF),
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Stack(
           children: [
-            Image.network(
-              projects[index][0],
-            ),
+            SizedBox(
+                height: 150,
+                width: 300,
+                child: projects[index][4] == "asset"
+                    ? Image.asset(projects[index][0])
+                    : Image.network(
+                        projects[index][0],
+                      )),
+            // projects[index][4] == "asset"
+            //     ? Image.asset(projects[index][0])
+            //     : Image.network(
+            //         projects[index][0],
+            //       ),
             Positioned(
               bottom: 90,
               child: Row(
@@ -50,6 +64,9 @@ class CardWidget extends StatelessWidget {
                 child: FilledButton(
                   onPressed: () {},
                   style: ButtonStyle(
+                    elevation: WidgetStateProperty.all<double>(10),
+                    side: WidgetStateProperty.all<BorderSide>(
+                        const BorderSide(color: Color(0xffA4A4A4))),
                       padding: WidgetStateProperty.all<EdgeInsets>(
                           const EdgeInsets.only(
                               left: 5, right: 5, top: 5, bottom: 5)),
@@ -57,7 +74,9 @@ class CardWidget extends StatelessWidget {
                           RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(6.0))),
                       backgroundColor: WidgetStateColor.resolveWith(
-                          (states) => const Color(0xff0e0f11))),
+                          (states) => bgColor == const Color(0xFF202124)
+                              ? const Color(0xff1b1c1f)
+                              : const Color(0xFFFFFFFF))),
                   child: const Text(
                     "PlayStore",
                     style: TextStyle(

@@ -59,6 +59,7 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
+                      elevation: WidgetStateProperty.all(10),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
                           : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
@@ -82,8 +83,10 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all(const Color(0xff1b1c1f))),
+                      elevation: WidgetStateProperty.all(10),
+                      backgroundColor: bgColor == const Color(0xFF202124)
+                          ? WidgetStateProperty.all(const Color(0xff1b1c1f))
+                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
                   onPressed: () {},
                   child: const Row(
                     children: [
@@ -104,8 +107,10 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      backgroundColor:
-                          WidgetStateProperty.all(const Color(0xff1b1c1f))),
+                      elevation: WidgetStateProperty.all(10),
+                      backgroundColor: bgColor == const Color(0xFF202124)
+                          ? WidgetStateProperty.all(const Color(0xff1b1c1f))
+                          : WidgetStateProperty.all(const Color(0xFFFFFFFF))),
                   onPressed: () {},
                   child: const Row(
                     children: [

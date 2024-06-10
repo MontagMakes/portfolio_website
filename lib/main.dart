@@ -31,7 +31,7 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
-  Color? bgColor = const Color(0xFF202124);
+  Color? bgColor = const Color(0xFFF5F5F5);
   late AnimationController _controller;
   late Animation<Color?> _colorAnimation;
 
@@ -71,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage>
         backgroundColor: bgColor,
         body: LayoutBuilder(builder: (context, constraints) {
           //web
-          if (constraints.maxWidth > 1351 && constraints.maxWidth < 2000) {
+          if (constraints.maxWidth > 1351) {
             return _buildPage(800, 3, 100, 100);
 
             //tablet
@@ -118,7 +118,7 @@ class _MyHomePageState extends State<MyHomePage>
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(
-          top: 100,
+          top: 50,
           left: paddingLeft,
           right: paddingRight,
         ),
@@ -143,40 +143,4 @@ class _MyHomePageState extends State<MyHomePage>
   }
 }
 
-List<List<String>> projects = [
-  [
-    "assets/newspak.png",
-    "/assets/icon.png",
-    "NewsPak",
-    "Superior Multi-channel news app with advanced features",
-    "asset"
-  ],
-  [
-    "assets/propak.png",
-    "/assets/icon.png",
-    "ProPak",
-    "ProPakistani news app with advanced features",
-    "asset"
-  ],
-  [
-    "assets/tribune.png",
-    "/assets/icon.png",
-    "The Tribune",
-    "Express Tribune news app with advanced features",
-    "asset"
-  ],
-  [
-    "etch.png",
-    "/assets/icon.png",
-    "Etch-a-Sketch",
-    "Color paint board website Made in html/css/javascript",
-    "asset"
-  ],
-  [
-    "rock.png",
-    "/assets/icon.png",
-    "Rock-paper-scissors",
-    "Game as a website Made in html/css/javascript",
-    "asset"
-  ],
-];
+

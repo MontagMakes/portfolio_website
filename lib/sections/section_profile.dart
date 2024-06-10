@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ProfileSection extends StatelessWidget {
   final double maxProfileWidth;
@@ -43,9 +44,7 @@ class ProfileSection extends StatelessWidget {
           const Text(
             'More about me',
             style: TextStyle(
-                fontSize: 13,
-                fontWeight: FontWeight.bold,
-                color: Color(0xff374151)),
+                fontSize: 13, fontWeight: FontWeight.bold, color: Colors.grey),
           ),
           const SizedBox(
             height: 20,
@@ -59,14 +58,16 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(1),
-                      shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
-                      ),
+                      elevation: WidgetStateProperty.all(3),
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
                           : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
-                  onPressed: () {},
+                  onPressed: () async {
+                    await launchUrl(Uri.parse(
+                        "https://play.google.com/store/apps/developer?id=MontagMakes"));
+                  },
                   child: const Row(
                     children: [
                       Icon(
@@ -86,14 +87,16 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(1),
-                      shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
-                      ),
+                      elevation: WidgetStateProperty.all(3),
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
                           : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
-                  onPressed: () {},
+                  onPressed: () async {
+                    await launchUrl(
+                        Uri.parse("https://github.com/MontagMakes"));
+                  },
                   child: const Row(
                     children: [
                       Icon(
@@ -113,14 +116,16 @@ class ProfileSection extends StatelessWidget {
                 width: 140,
                 child: FilledButton(
                   style: ButtonStyle(
-                      elevation: WidgetStateProperty.all(1),
-                      shape: WidgetStatePropertyAll(
-                          RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))
-                      ),
+                      elevation: WidgetStateProperty.all(3),
+                      shape: WidgetStatePropertyAll(RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10))),
                       backgroundColor: bgColor == const Color(0xFF202124)
                           ? WidgetStateProperty.all(const Color(0xff1b1c1f))
                           : WidgetStateProperty.all(const Color(0xFFF5F5F5))),
-                  onPressed: () {},
+                  onPressed: () async {
+                    await launchUrl(Uri.parse(
+                        "https://www.linkedin.com/in/arsalan-khan-87392b252/"));
+                  },
                   child: const Row(
                     children: [
                       Icon(FontAwesomeIcons.linkedin, color: Color(0xffA4A4A4)),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:portfolio_website/data.dart';
 import 'package:portfolio_website/sections/widgets/card_widget.dart';
 
 class MainSection extends StatefulWidget {
@@ -60,7 +61,10 @@ class _MainSectionState extends State<MainSection> {
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
             children: List.generate(5, (index) {
-              return CardWidget(index: index, bgColor: widget.bgColor,);
+              return CardWidget(
+                index: index,
+                bgColor: widget.bgColor,
+              );
             }),
           ),
 
@@ -84,18 +88,20 @@ class _MainSectionState extends State<MainSection> {
                   10,
                   (index) => Container(
                         margin: const EdgeInsets.only(right: 10),
-                        padding: const EdgeInsets.all(10), 
+                        padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          
                             color: widget.bgColor == const Color(0xFF202124)
                                 ? const Color(0xff1b1c1f)
                                 : const Color(0xFFFFFFFF),
                             borderRadius: BorderRadius.circular(10)),
                         child: Text(
-                          "Tech $index",
+                          techStack[index],
                           style: const TextStyle(color: Colors.grey),
                         ),
-                      )))
+                      ))),
+          const SizedBox(
+            height: 50,
+          )
         ],
       ),
     );

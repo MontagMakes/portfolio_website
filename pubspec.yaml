@@ -24,14 +24,7 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/avatar.jpeg
-    - assets/newspak.png
-    - assets/propak.png
-    - assets/tribune.png
-    - assets/etch.png
-    - assets/rock.png
-    - assets/logoNewsPak.png
-    - assets/logoProPak.png
-    - assets/logoTribune.png
+    - assets/
     
+
 

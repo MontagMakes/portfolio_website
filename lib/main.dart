@@ -114,7 +114,7 @@ class _MyHomePageState extends State<MyHomePage>
         }));
   }
 
-  Widget _buildPage(gridWidth, gridCount, paddingLeft, paddingRight) {
+  Widget _buildPage(double gridWidth,int gridCount, double paddingLeft, double paddingRight) {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(

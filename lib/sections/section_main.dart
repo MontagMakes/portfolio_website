@@ -60,7 +60,7 @@ class _MainSectionState extends State<MainSection> {
             crossAxisCount: widget.gridCount,
             shrinkWrap: true,
             physics: const NeverScrollableScrollPhysics(),
-            children: List.generate(5, (index) {
+            children: List.generate(projects1.length, (index) {
               return CardWidget(
                 index: index,
                 bgColor: widget.bgColor,
@@ -82,14 +82,23 @@ class _MainSectionState extends State<MainSection> {
           ),
 
           Wrap(
+            spacing: 10,
+            runSpacing: 10,
               direction: Axis.horizontal,
               alignment: WrapAlignment.start,
               children: List.generate(
                   10,
                   (index) => Container(
-                        margin: const EdgeInsets.only(right: 10),
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.black.withOpacity(0.1),
+                              spreadRadius: 1,
+                              blurRadius: 1,
+                              offset: const Offset(0, 2), // changes position of shadow
+                            ),
+                          ],
                             color: widget.bgColor == const Color(0xFF202124)
                                 ? const Color(0xff1b1c1f)
                                 : const Color(0xFFFFFFFF),

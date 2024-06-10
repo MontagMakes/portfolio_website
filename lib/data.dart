@@ -5,7 +5,7 @@ List<Map<String, String>> projects1 = [
     "description": "Superior Multi-channel news app with advanced features",
     "isAsset": "asset",
     "onPlayStore": "PlayStore",
-    "isLogo" : "logo",
+    "isLogo": "logo",
     "playLogo": "assets/logoNewsPak.png",
     "playLink":
         "https://play.google.com/store/apps/details?id=com.montagmakes.news_pakistan",
@@ -19,7 +19,7 @@ List<Map<String, String>> projects1 = [
     "description": "Express Tribune news app with advanced features",
     "isAsset": "asset",
     "onPlay": "PlayStore",
-    "isLogo" : "logo",
+    "isLogo": "logo",
     "playLogo": "assets/logoTribune.png",
     "playLink":
         "https://play.google.com/store/apps/details?id=com.montagmakes.tribune",
@@ -33,7 +33,7 @@ List<Map<String, String>> projects1 = [
     "description": "ProPakistani news app with advanced features",
     "isAsset": "asset",
     "onPlay": "PlayStore",
-    "isLogo" : "logo",
+    "isLogo": "logo",
     "playLogo": "assets/logoProPak.png",
     "playLink":
         "https://play.google.com/store/apps/details?id=com.taxfiler.propakistani",
@@ -47,7 +47,7 @@ List<Map<String, String>> projects1 = [
     "description": "Color paint board website Made in html/css/javascript",
     "isAsset": "asset",
     "onPlay": "PlayStore",
-    "isLogo" : "",
+    "isLogo": "",
     "playLink": "",
     "onGit": "",
     "gitLink": "https://github.com/MontagMakes/Etch-a-Sketch",
@@ -59,11 +59,21 @@ List<Map<String, String>> projects1 = [
     "description": "Game in a website Made in html/css/javascript",
     "isAsset": "asset",
     "onPlay": "PlayStore",
-    "isLogo" : "",
+    "isLogo": "",
     "playLink": "",
     "onGit": "",
     "gitLink": "https://github.com/MontagMakes/rock-paper-scissors",
     "webLink": "https://montagmakes.github.io/rock-paper-scissors/",
+  },
+  {
+    "asset": "website.png",
+    "title": "MontagMakes",
+    "description": "Portfolio Website made in flutter web",
+    "onPlayStore": "PlayStore",
+    "playLogo": "assets/logoNewsPak.png",
+    "playLink":"",
+    "gitLink": "https://github.com/MontagMakes/portfolio_website",
+    "webLink": "",
   },
 ];
 

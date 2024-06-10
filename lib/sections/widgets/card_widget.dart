@@ -21,6 +21,7 @@ class CardWidget extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(18.0),
         child: Column(
+          mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Expanded(

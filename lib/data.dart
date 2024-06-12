@@ -28,7 +28,7 @@ List<Map<String, String>> projects1 = [
     "webLink": "",
   },
   {
-    "asset": "etch.png",
+    "asset": "assets/etch.png",
     "title": "Etch-a-Sketch",
     "description": "Color paint board website Made in html/css/javascript",
     "isAsset": "asset",
@@ -40,7 +40,7 @@ List<Map<String, String>> projects1 = [
     "webLink": "https://montagmakes.github.io/Etch-a-Sketch/",
   },
   {
-    "asset": "rock.png",
+    "asset": "assets/rock.png",
     "title": "Rock-paper-scissors",
     "description": "Game in a website Made in html/css/javascript",
     "isAsset": "asset",
@@ -52,7 +52,7 @@ List<Map<String, String>> projects1 = [
     "webLink": "https://montagmakes.github.io/rock-paper-scissors/",
   },
   {
-    "asset": "website.png",
+    "asset": "assets/website.png",
     "title": "MontagMakes",
     "description": "Portfolio Website made in flutter web",
     "onPlayStore": "PlayStore",

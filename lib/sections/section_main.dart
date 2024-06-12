@@ -34,9 +34,7 @@ class _MainSectionState extends State<MainSection> {
             padding: const EdgeInsets.all(0),
             child: IconButton(
               onPressed: () {
-                setState(() {
-                  widget.changeBackGroundColor();
-                });
+                widget.changeBackGroundColor();
               },
               icon: Icon(
                 widget.bgColor == const Color(0xFF202124)
@@ -82,8 +80,8 @@ class _MainSectionState extends State<MainSection> {
           ),
 
           Wrap(
-            spacing: 10,
-            runSpacing: 10,
+              spacing: 10,
+              runSpacing: 10,
               direction: Axis.horizontal,
               alignment: WrapAlignment.start,
               children: List.generate(
@@ -91,14 +89,15 @@ class _MainSectionState extends State<MainSection> {
                   (index) => Container(
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
-                          boxShadow: [
-                            BoxShadow(
-                              color: Colors.black.withOpacity(0.1),
-                              spreadRadius: 1,
-                              blurRadius: 1,
-                              offset: const Offset(0, 2), // changes position of shadow
-                            ),
-                          ],
+                            boxShadow: [
+                              BoxShadow(
+                                color: Colors.black.withOpacity(0.1),
+                                spreadRadius: 1,
+                                blurRadius: 1,
+                                offset: const Offset(
+                                    0, 2), // changes position of shadow
+                              ),
+                            ],
                             color: widget.bgColor == const Color(0xFF202124)
                                 ? const Color(0xff1b1c1f)
                                 : const Color(0xFFFFFFFF),

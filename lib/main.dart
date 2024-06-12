@@ -39,15 +39,14 @@ class _MyHomePageState extends State<MyHomePage>
   void initState() {
     super.initState();
     _controller = AnimationController(
-        vsync: this, duration: const Duration(milliseconds: 200));
+        vsync: this, duration: const Duration(milliseconds: 200), value: 1.0);
     _colorAnimation =
         ColorTween(begin: const Color(0xFF202124), end: const Color(0xFFF5F5F5))
             .animate(_controller);
 
     _controller.addListener(() {
-      setState(() {
-        bgColor = _colorAnimation.value;
-      });
+      bgColor = _colorAnimation.value;
+      setState(() {});
     });
   }
 
@@ -114,7 +113,8 @@ class _MyHomePageState extends State<MyHomePage>
         }));
   }
 
-  Widget _buildPage(double gridWidth,int gridCount, double paddingLeft, double paddingRight) {
+  Widget _buildPage(double gridWidth, int gridCount, double paddingLeft,
+      double paddingRight) {
     return SingleChildScrollView(
       child: Padding(
         padding: EdgeInsets.only(
@@ -142,5 +142,3 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 }
-
-

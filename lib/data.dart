@@ -13,20 +13,7 @@ List<Map<String, String>> projects1 = [
     "gitLink": "",
     "webLink": "",
   },
-  {
-    "asset": "assets/tribune.png",
-    "title": "The Tribune",
-    "description": "Express Tribune news app with advanced features",
-    "isAsset": "asset",
-    "onPlay": "PlayStore",
-    "isLogo": "logo",
-    "playLogo": "assets/logoTribune.png",
-    "playLink":
-        "https://play.google.com/store/apps/details?id=com.montagmakes.tribune",
-    "onGit": "",
-    "gitLink": "https://github.com/MontagMakes/tribune_app",
-    "webLink": "",
-  },
+  
   {
     "asset": "assets/propak.png",
     "title": "ProPak",
@@ -73,6 +60,20 @@ List<Map<String, String>> projects1 = [
     "playLogo": "assets/logoNewsPak.png",
     "playLink":"",
     "gitLink": "https://github.com/MontagMakes/portfolio_website",
+    "webLink": "",
+  },
+  {
+    "asset": "assets/tribune.png",
+    "title": "The Tribune",
+    "description": "Express Tribune news app with advanced features",
+    "isAsset": "asset",
+    "onPlay": "PlayStore",
+    "isLogo": "logo",
+    "playLogo": "assets/logoTribune.png",
+    "playLink":
+        "https://play.google.com/store/apps/details?id=com.montagmakes.tribune",
+    "onGit": "",
+    "gitLink": "https://github.com/MontagMakes/tribune_app",
     "webLink": "",
   },
 ];

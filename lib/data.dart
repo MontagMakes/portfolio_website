@@ -30,13 +30,13 @@ List<Map<String, String>> projects1 = [
   {
     "asset": "assets/3commerce.png",
     "title": "3Commerce",
-    "description": "3Commerce is a C2C Ecommerce app with 3D integration made in Flutter ",
+    "description":
+        "3Commerce is a C2C Ecommerce app with 3D integration made in Flutter ",
     "isAsset": "asset",
     "onPlay": "",
     "isLogo": "logo",
     "playLogo": "assets/3commerce_icon.png",
-    "playLink":
-        "",
+    "playLink": "",
     "onGit": "",
     "gitLink": "https://github.com/MontagMakes/3commerce",
     "webLink": "",
@@ -54,6 +54,18 @@ List<Map<String, String>> projects1 = [
     "onGit": "",
     "gitLink": "https://github.com/MontagMakes/ProPakistani",
     "webLink": "",
+  },
+  {
+    "asset": "assets/finpal_bg.png",
+    "title": "Finpal Accountants",
+    "description": "Company website made in html/css/javascript",
+    "isAsset": "asset",
+    "onPlay": "PlayStore",
+    "isLogo": "",
+    "playLink": "",
+    "onGit": "",
+    "gitLink": "",
+    "webLink": "https://montagmakes.github.io/finpal_accountants_website/",
   },
   {
     "asset": "assets/etch.png",
